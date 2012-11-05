@@ -1,0 +1,30 @@
+<resources>
+
+    <string name="app_name">practica3</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_play">PlayActivity</string>
+    <string name="title_activity_scores">ScoresActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_credits">CreditsActivity</string>
+
+    
+    <string name="main_play">Play</string>
+    <string name="main_scores">Scores</string>
+    <string name="main_settings">Settings</string>
+    <string name="main_credits">Creditos</string>
+    <string name="settings_name">Name:</string>
+    <string name="settings_ManyTimes">Select how many times can you ask for help:</string>
+    <string name="addFriend">Add Friend</string>
+    
+    <string name="play_pregunta">¿Cual es la respuesta que hay que elegir para esta pregunta de estas cuatro opciones?</string>
+    <string name="play_apuesta">Juega por:</string>
+    <string name="play_npregunta">Pregunta:</string>
+    
+    <string name="play_telefono">Telefono</string>
+    <string name="play_cincuenta">Cincuenta</string>
+    <string name="play_audiencia">Audiencia</string>
+    
+    <string name="scores_borrar">Borrar</string>
+</resources>

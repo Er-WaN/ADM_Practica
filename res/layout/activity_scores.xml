@@ -1,0 +1,57 @@
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+         xmlns:tools="http://schemas.android.com/tools"
+         android:id="@+id/tabhost"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+			  <TableLayout 
+					    android:id="@+id/scores_tabla"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:text="Mi puntuacion" >    
+					    
+					    <TableRow
+					        android:id="@+id/tableRow1"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content" >
+					    </TableRow>
+					
+			   </TableLayout>						    
+           
+
+			  <TableLayout 
+					    android:id="@+id/scores_amigos"
+					    android:layout_width="wrap_content"
+					    android:layout_height="wrap_content"
+					    android:text="Puntuacion amigos" >    
+					    
+					    <TableRow
+					        android:id="@+id/tableRow1"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content" >
+					    </TableRow>
+					
+			   </TableLayout>	
+
+
+
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+

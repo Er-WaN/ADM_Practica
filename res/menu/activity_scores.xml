@@ -1,0 +1,5 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">   
+
+  <item android:icon="@drawable/credits" android:id="@+id/scores_borrar" android:title="@string/scores_borrar"/> 
+    
+</menu>

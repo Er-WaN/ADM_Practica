@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="62dp"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/main_play"
+            android:layout_width="228dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="34dp"
+            android:layout_weight="0.20"
+            android:onClick="onClickPlay"
+            android:text="@string/main_play" />
+
+        <Button
+            android:id="@+id/manin_scores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="31dp"
+            android:onClick="onClickScores"
+            android:text="@string/main_scores" />
+
+        <Button
+            android:id="@+id/main_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:onClick="onClickSettings"
+            android:text="@string/main_settings" />
+    </LinearLayout>
+
+</RelativeLayout>
