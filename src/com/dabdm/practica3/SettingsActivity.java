@@ -136,36 +136,29 @@ public class SettingsActivity extends Activity /*implements OnItemSelectedListen
 
     	@Override
     	protected Boolean doInBackground(String... params) {          
-            	try{
+    
             		
-            		HttpResponse response = null;
-            		HttpEntity entity = null;
-            		HttpClient client = new DefaultHttpClient();
-            		HttpPost request = null;
-            		List<NameValuePair> pares = new ArrayList<NameValuePair>();
-            		pares.add(new BasicNameValuePair("name", params[0]));
-            		pares.add(new BasicNameValuePair("friend_name", params[1]));
+    		HttpResponse response = null;
+    		HttpEntity entity = null;
+    		HttpClient client = new DefaultHttpClient();
+    		HttpPost request = null;
+    		List<NameValuePair> pares = new ArrayList<NameValuePair>();
+    		pares.add(new BasicNameValuePair("name", params[0]));
+    		pares.add(new BasicNameValuePair("friend_name", params[1]));
 
-					try {
-						
-						request = new HttpPost("http://soletaken.disca.upv.es:8080/WWTBAM/rest/friends");
-						request.setEntity(new UrlEncodedFormEntity(pares));				
-						response = client.execute(request);						
+			try {
+				
+				request = new HttpPost("http://soletaken.disca.upv.es:8080/WWTBAM/rest/friends");
+				request.setEntity(new UrlEncodedFormEntity(pares));				
+				response = client.execute(request);						
 
-					} catch (ClientProtocolException e) {
-						e.printStackTrace();
-					} catch (UnsupportedEncodingException e) {
-						e.printStackTrace();
-					} catch (IOException e) {
-						e.printStackTrace();
-            		            		
-					
-            	    
-
-            	}catch(InterruptedException e){
-            		 Log.d("ObtenerScoresAmigos", "InterruptedException");
-            	}        	
-          
+			} catch (ClientProtocolException e) {
+				e.printStackTrace();
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}            		
     		
     		return true;
     	}
