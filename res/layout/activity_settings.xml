@@ -1,17 +1,19 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF" >
 
-    <RelativeLayout 
-    	xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#000000"
-    />
+        android:background="#AAAAAA"
+        android:gravity="center"
+        android:height="40dp"
+        android:text="@string/main_settings"
+        android:textColor="#000000"
+        android:textSize="25dp" />
+
     <EditText
         android:id="@+id/usuario"
         android:layout_width="wrap_content"
@@ -20,7 +22,9 @@
         android:layout_alignParentTop="true"
         android:layout_marginRight="18dp"
         android:layout_marginTop="76dp"
-        android:ems="10" >
+        android:ems="10"
+        android:hint="@string/nombre_aqui"
+        android:inputType="textPersonName" >
 
         <requestFocus />
     </EditText>
@@ -33,16 +37,40 @@
         android:layout_alignBottom="@+id/usuario"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="14dp"
+        android:paddingLeft="0"
         android:text="@string/settings_name"
+        android:textColor="#000000"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/usuario"
+        android:layout_marginTop="36dp"
+        android:lines="1"
+        android:minLines="1"
+        android:paddingLeft="1dp"
+        android:text="@string/settings_ManyTimes"
         android:textColor="#000000" />
+
+    <Spinner
+        android:id="@+id/manyTimes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="15dp"
+        android:entries="@array/manyTimes" />
 
     <Button
         android:id="@+id/addFriend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="80dp"
+        android:layout_below="@+id/manyTimes"
+        android:layout_marginTop="38dp"
         android:onClick="onClickAddFriend"
         android:text="@string/addFriend" />
 
@@ -50,28 +78,10 @@
         android:id="@+id/friendAdded"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/addFriend"
         android:layout_alignBottom="@+id/addFriend"
-        android:layout_alignParentRight="true"
-        android:ems="10" />
-
-    <Spinner
-        android:id="@+id/manyTimes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/usuario"
-        android:entries="@array/manyTimes" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/manyTimes"
-        android:layout_alignParentLeft="true"
-        android:lines="2"
-        android:minLines="2"
-        android:paddingLeft="5dp"
-        android:text="@string/settings_ManyTimes"
-        android:textColor="#000000" />
+        android:layout_alignRight="@+id/usuario"
+        android:ems="10"
+        android:paddingRight="10dp" />
 
 </RelativeLayout>

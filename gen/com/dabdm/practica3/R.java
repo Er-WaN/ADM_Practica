@@ -68,7 +68,7 @@ public final class R {
         public static final int questions=0x7f040000;
     }
     public static final class string {
-        public static final int addFriend=0x7f07000e;
+        public static final int addFriend=0x7f07000f;
         public static final int app_name=0x7f070000;
         public static final int hello_world=0x7f070001;
         public static final int main_credits=0x7f07000b;
@@ -76,14 +76,15 @@ public final class R {
         public static final int main_scores=0x7f070009;
         public static final int main_settings=0x7f07000a;
         public static final int menu_settings=0x7f070002;
-        public static final int play_apuesta=0x7f070010;
-        public static final int play_audiencia=0x7f070014;
-        public static final int play_cincuenta=0x7f070013;
-        public static final int play_npregunta=0x7f070011;
-        public static final int play_pregunta=0x7f07000f;
-        public static final int play_telefono=0x7f070012;
-        public static final int scores_borrar=0x7f070015;
-        public static final int settings_ManyTimes=0x7f07000d;
+        public static final int nombre_aqui=0x7f07000d;
+        public static final int play_apuesta=0x7f070011;
+        public static final int play_audiencia=0x7f070015;
+        public static final int play_cincuenta=0x7f070014;
+        public static final int play_npregunta=0x7f070012;
+        public static final int play_pregunta=0x7f070010;
+        public static final int play_telefono=0x7f070013;
+        public static final int scores_borrar=0x7f070016;
+        public static final int settings_ManyTimes=0x7f07000e;
         public static final int settings_name=0x7f07000c;
         public static final int title_activity_credits=0x7f070007;
         public static final int title_activity_main=0x7f070003;
