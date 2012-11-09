@@ -37,10 +37,10 @@ public class PlayActivity extends FragmentActivity {
 	private Question preguntaActual;
 	private boolean refrescarMenu=false;
 	private MyHelperBBDD myHelperBBDD;
-	
+
 	//Si alcanza la pregunta 5 guarda el valor si falla, o si llega a la 10, si no lo pierde todo
 	public static Integer[] premios = {100,200,300,500,1000,2000,4000,8000,16000,32000,64000,125000,250000,500000,1000000};
-	
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,15 +89,15 @@ public class PlayActivity extends FragmentActivity {
              default:
             	 return super.onOptionsItemSelected(item);
          }
-		
+
 		return true;		
 	}
     
-	
+
 	public void desactivarBotonesPreguntas(Integer...botones){
-		
+
 		Button boton = null;
-		
+
 		for(Integer b : botones){
 			switch(b){
 			case 1:				
@@ -118,7 +118,7 @@ public class PlayActivity extends FragmentActivity {
 			}
 		}
 	}
-	
+
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
@@ -138,18 +138,18 @@ public class PlayActivity extends FragmentActivity {
 	}
 
 	private Question restoreData() {
-		
+
 		Integer numPregunta = 0 ;
 		try {
 			SharedPreferences preferences = getSharedPreferences("estado.xml",Context.MODE_PRIVATE);		
 			//Recupera el n�mero de pregunta que estaba
 			numPregunta = preferences.getInt("numPregunta", 1);
 			numPregunta = numPregunta-1;
-			
+
 		} catch (Exception e) {
 			numPregunta = 0;
 		}		
-		
+
 		return preguntas.get(numPregunta);
 	}
 
@@ -161,7 +161,7 @@ public class PlayActivity extends FragmentActivity {
 		editor.commit();
 	}
     	
-		
+
     	
 	/**
 	 * Carga las preguntas que va leyendo del fichero con el formato:
@@ -178,7 +178,7 @@ public class PlayActivity extends FragmentActivity {
 			inputStream = getResources().openRawResource(R.raw.questions);			
 		    parser = XmlPullParserFactory.newInstance().newPullParser();
 			parser.setInput(inputStream, null);
-			
+
 			int eventType = XmlPullParser.START_DOCUMENT;
 			while (eventType != XmlPullParser.END_DOCUMENT) {
 				if (eventType == XmlPullParser.START_TAG && "question".equals(parser.getName())) {
@@ -198,9 +198,9 @@ public class PlayActivity extends FragmentActivity {
 				}
 				eventType = parser.next();		
 			}
-			
+
 			inputStream.close();
-			
+
 		}catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}catch (IOException e) {
@@ -212,8 +212,8 @@ public class PlayActivity extends FragmentActivity {
 		}
 	}
 
-	
-	
+
+
 	public void muestraPregunta(Question pregunta){
 
 		// Texto de la pregunta
@@ -228,7 +228,7 @@ public class PlayActivity extends FragmentActivity {
 		text = (EditText) findViewById(R.id.play_apuesta);
 		text.setText( Integer.toString(  premios[ pregunta.getNumber()-1] ) );// rango preguntas [0-14]
 		text.setEnabled(false); 
-		
+
 		// Primera respuesta
 		Button boton = (Button) findViewById( R.id.answer1);
 		boton.setText( pregunta.getAnswer1() );
@@ -246,7 +246,7 @@ public class PlayActivity extends FragmentActivity {
 		boton.setText( pregunta.getAnswer4() );
 		boton.setEnabled(true);
 	}
-	
+
 
 	public void onClickPreguntaSeleccionada(View v){
 
@@ -266,21 +266,21 @@ public class PlayActivity extends FragmentActivity {
           default://No hace nada
         	  break; 
       }
-	  
+
 	}    
-	
+
 	private void responderPregunta(Integer numeroPreguntaSeleccionada){
-		
+
 		Integer irAPregunta=0;
-		
+
 		if( numeroPreguntaSeleccionada.equals(preguntaActual.getRight()) ){            		
-			
+
 			//Muestra la siguiente pregunta(mientras no sea la �ltima
 			if(preguntaActual.getNumber()<15) {
 				MostrarDialogo.mensaje = "Respuesta correcta! Pasa a la siguiente pregunta....";
 				new MostrarDialogo().show(getSupportFragmentManager(), "Tag interno");				
 				irAPregunta = preguntaActual.getNumber();
-				
+
 			}else{
 				MostrarDialogo.mensaje = "Respuesta correcta, ha ganado el concurso, se lleva como premio " +  premios[ preguntaActual.getNumber()-1] ;
 				new MostrarDialogo().show(getSupportFragmentManager(), "Tag interno");
@@ -293,38 +293,38 @@ public class PlayActivity extends FragmentActivity {
 			}else if(preguntaActual.getNumber()>10){
 				mensajeNOK = mensajeNOK + " Su premio es de " + premios[9]; // En el rango de preguntas [10-15] se lleva el premio de la decima si falla
 			}
-			
+
 			//Guarda la puntuaci�n obtenida en la bbdd
 			SQLiteDatabase db = this.myHelperBBDD.getReadableDatabase();
 			Cursor cursor = db.rawQuery("SELECT max(id) AS id FROM scores", null);
 			cursor.moveToFirst();
 			Integer idMax = cursor.getInt(0);
 			db.execSQL("INSERT INTO scores (id,name,score) VALUES ("+(idMax+1) +",'miUsuario',"+ premios[preguntaActual.getNumber()-1]+");");
-			
+
 			MostrarDialogo.mensaje = mensajeNOK;
 			new MostrarDialogo().show(getSupportFragmentManager(), "TEXTO VACIAO");
-			
+
 			irAPregunta = 0;
 			refrescarMenu = true; //Activar los items de menu desactivos
 		}
-		
+
         preguntaActual = preguntas.get(irAPregunta);
         muestraPregunta(  preguntaActual );
 	}
-	
-	
-	
+
+
+
 	// Ver por que no funciona lo de los DIALOGOS!!!!!!!!!!!!!
 	private static class MostrarDialogo extends DialogFragment {
-		
+
 		public static String mensaje = "PRUEBA QUE SALE EL MENSAJE";
-		
+
 
 		public Dialog onCreateDialog(Bundle savedInstanceState) {
 			AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 			builder.setMessage( mensaje );
 			return builder.create();
 		}
-		
+
 	}
 }

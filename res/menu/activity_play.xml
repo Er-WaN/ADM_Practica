@@ -1,7 +1,14 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">   
-
-  <item android:icon="@drawable/credits" android:id="@+id/play_telefono" android:title="@string/play_telefono"/> 
-  <item android:icon="@drawable/credits" android:id="@+id/play_cincuenta" android:title="@string/play_cincuenta"/>
-  <item android:icon="@drawable/credits" android:id="@+id/play_audiencia" android:title="@string/play_audiencia"/>
-    
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item 
+      android:icon="@drawable/telephone" 
+      android:id="@+id/play_telefono" 
+      android:title="@string/play_telefono"/> 
+  <item 
+      android:icon="@drawable/cinquenta" 
+      android:id="@+id/play_cincuenta" 
+      android:title="@string/play_cincuenta"/>
+  <item 
+      android:icon="@drawable/audencia" 
+      android:id="@+id/play_audiencia" 
+      android:title="@string/play_audiencia"/>
 </menu>
