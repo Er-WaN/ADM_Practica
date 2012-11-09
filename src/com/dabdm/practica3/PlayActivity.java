@@ -221,11 +221,11 @@ public class PlayActivity extends FragmentActivity {
 		textView.setText( pregunta.getText() );
 
 		// N�mero de pregunta
-		EditText text = (EditText) findViewById(R.id.play_numPregunta);
+		TextView text = (TextView) findViewById(R.id.play_numPregunta);
 		text.setText( Integer.toString( pregunta.getNumber() ) );
 		text.setEnabled(false);
 		// Premio que le corresponde para la pregunta
-		text = (EditText) findViewById(R.id.play_apuesta);
+		text = (TextView) findViewById(R.id.play_apuesta);
 		text.setText( Integer.toString(  premios[ pregunta.getNumber()-1] ) );// rango preguntas [0-14]
 		text.setEnabled(false); 
 

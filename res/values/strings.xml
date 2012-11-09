@@ -21,11 +21,12 @@
     
     <string name="play_pregunta">¿Cual es la respuesta que hay que elegir para esta pregunta de estas cuatro opciones?</string>
     <string name="play_apuesta">Juega por:</string>
-    <string name="play_npregunta">Pregunta:</string>
+    <string name="play_npregunta">Pregunta</string>
     
     <string name="play_telefono">Telefono</string>
     <string name="play_cincuenta">Cincuenta</string>
     <string name="play_audiencia">Audiencia</string>
     
     <string name="scores_borrar">Borrar</string>
+    <string name="titulo">¿Quién quiere ser millonario?</string>
 </resources>
