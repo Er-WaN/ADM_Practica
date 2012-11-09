@@ -10,14 +10,14 @@
     <string name="title_activity_credits">CreditsActivity</string>
 
     
-    <string name="main_play">Play</string>
-    <string name="main_scores">Scores</string>
-    <string name="main_settings">Settings</string>
+    <string name="main_play">Jugar</string>
+    <string name="main_scores">Puntajes</string>
+    <string name="main_settings">Configuración</string>
     <string name="main_credits">Creditos</string>
-    <string name="settings_name">Name:</string>
-    <string name="nombre_aqui">Your name here</string>
+    <string name="settings_name">Nombre:</string>
+    <string name="nombre_aqui">Su nombre aqui</string>
     <string name="settings_ManyTimes">Select how many times can you ask for help:</string>
-    <string name="addFriend">Add Friend</string>
+    <string name="addFriend">Agregar amigo</string>
     
     <string name="play_pregunta">¿Cual es la respuesta que hay que elegir para esta pregunta de estas cuatro opciones?</string>
     <string name="play_apuesta">Juega por:</string>

@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:orientation="vertical" 
         android:gravity="center">
         
@@ -22,30 +22,38 @@
 
         <Button
             android:id="@+id/main_play"
-            android:layout_width="120dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginBottom="7dp"
+            android:layout_marginTop="40dp"
             android:layout_weight="0.20"
             android:onClick="onClickPlay"
             android:text="@string/main_play" />
 
         <Button
             android:id="@+id/manin_scores"
-            android:layout_width="120dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_above="@+id/main_play"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="7dp"
             android:onClick="onClickScores"
             android:text="@string/main_scores" />
 
         <Button
             android:id="@+id/main_settings"
-            android:layout_width="120dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_above="@+id/manin_scores"
+            android:layout_marginBottom="7dp"
             android:onClick="onClickSettings"
             android:text="@string/main_settings" />
+        
+        <Button 
+            android:layout_height="wrap_content"
+			android:id="@+id/Button01main"
+			android:layout_width="160dp"
+			android:text="@string/main_credits" />
+        
     </LinearLayout>
 
 </RelativeLayout>
